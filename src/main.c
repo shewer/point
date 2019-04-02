@@ -13,6 +13,7 @@ int main(int argc, char *argv[])
 {
 	char ch,*ptr; 	
 	_Eval(ch= *ptr++, "");
+	_Eval(ch= *++ptr, "");
 	return 0;
 }
 
