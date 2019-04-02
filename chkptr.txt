@@ -1,0 +1,177 @@
+-------======== macro eval 
+------ init ch ptr  ------
+ch:'_' ptr:AbCdE ,string:AbCdE
+ptr:	0x7fd5eb402010
+string:	0x7fd5eb402010
+
+code: 0xffffffff  ch: 0xffffffff | ptr: 0x0c 
+info: error code 
+------ After ch = *ptr++ ------
+ch:'A' ptr:bCdE ,string:AbCdE
+ptr:	0x7fd5eb402011
+string:	0x7fd5eb402010
+
+code: 0x1c  ch: 0x00 | ptr: 0x1c 
+info: ch= *ptr; ptr++;
+------ After ch = (*ptr++ ) ------
+ch:'A' ptr:bCdE ,string:AbCdE
+ptr:	0x7fd5eb402011
+string:	0x7fd5eb402010
+
+code: 0x1c  ch: 0x00 | ptr: 0x1c 
+info: ch= *ptr; ptr++;
+------ After ch = (*(ptr)++) ------
+ch:'A' ptr:bCdE ,string:AbCdE
+ptr:	0x7fd5eb402011
+string:	0x7fd5eb402010
+
+code: 0x1c  ch: 0x00 | ptr: 0x1c 
+info: ch= *ptr; ptr++;
+------ After ch = *(ptr++) ------
+ch:'A' ptr:bCdE ,string:AbCdE
+ptr:	0x7fd5eb402011
+string:	0x7fd5eb402010
+
+code: 0x1c  ch: 0x00 | ptr: 0x1c 
+info: ch= *ptr; ptr++;
+------ After ch = (*ptr)++ ------
+ch:'A' ptr:BbCdE ,string:BbCdE
+ptr:	0x7fd5eb402010
+string:	0x7fd5eb402010
+
+code: 0x08  ch: 0x00 | ptr: 0x08 
+info: ch= *ptr ; *ptr +=1 ;
+------ After ch = *++ptr ------
+ch:'b' ptr:bCdE ,string:AbCdE
+ptr:	0x7fd5eb402011
+string:	0x7fd5eb402010
+
+code: 0x1d  ch: 0x01 | ptr: 0x1c 
+info: ptr++ ; ch=*ptr ;
+------ After ch = *(++ptr) ------
+ch:'b' ptr:bCdE ,string:AbCdE
+ptr:	0x7fd5eb402011
+string:	0x7fd5eb402010
+
+code: 0x1d  ch: 0x01 | ptr: 0x1c 
+info: ptr++ ; ch=*ptr ;
+------ After ch = *++(ptr) ------
+ch:'b' ptr:bCdE ,string:AbCdE
+ptr:	0x7fd5eb402011
+string:	0x7fd5eb402010
+
+code: 0x1d  ch: 0x01 | ptr: 0x1c 
+info: ptr++ ; ch=*ptr ;
+------ After ch = ++*ptr ------
+ch:'B' ptr:BbCdE ,string:BbCdE
+ptr:	0x7fd5eb402010
+string:	0x7fd5eb402010
+
+code: 0x0a  ch: 0x02 | ptr: 0x08 
+info: ch=*ptr ; *ptr+=1 ;ptr++ ;
+------ After ch = ++(*ptr) ------
+ch:'B' ptr:BbCdE ,string:BbCdE
+ptr:	0x7fd5eb402010
+string:	0x7fd5eb402010
+
+code: 0x0a  ch: 0x02 | ptr: 0x08 
+info: ch=*ptr ; *ptr+=1 ;ptr++ ;
+------ After ch = ++*(ptr) ------
+ch:'B' ptr:BbCdE ,string:BbCdE
+ptr:	0x7fd5eb402010
+string:	0x7fd5eb402010
+
+code: 0x0a  ch: 0x02 | ptr: 0x08 
+info: ch=*ptr ; *ptr+=1 ;ptr++ ;
+------=== test ++*ptr++ 
+------ After ch = ++*ptr++ ------
+ch:'B' ptr:bCdE ,string:BbCdE
+ptr:	0x7fd5eb402011
+string:	0x7fd5eb402010
+
+code: 0x1a  ch: 0x02 | ptr: 0x18 
+info: *ptr +=1; ch=*ptr ; ptr++ ;
+------ After ch = ++(*ptr++) ------
+ch:'B' ptr:bCdE ,string:BbCdE
+ptr:	0x7fd5eb402011
+string:	0x7fd5eb402010
+
+code: 0x1a  ch: 0x02 | ptr: 0x18 
+info: *ptr +=1; ch=*ptr ; ptr++ ;
+------ After ch = ++*(ptr++) ------
+ch:'B' ptr:bCdE ,string:BbCdE
+ptr:	0x7fd5eb402011
+string:	0x7fd5eb402010
+
+code: 0x1a  ch: 0x02 | ptr: 0x18 
+info: *ptr +=1; ch=*ptr ; ptr++ ;
+------ After ch= (*++ptr)++ ------
+ch:'b' ptr:cCdE ,string:AcCdE
+ptr:	0x7fd5eb402011
+string:	0x7fd5eb402010
+
+code: 0x15  ch: 0x01 | ptr: 0x14 
+info: *ptr +=1; ch=*ptr ;
+------ After ch= (*(++ptr))++ ------
+ch:'b' ptr:cCdE ,string:AcCdE
+ptr:	0x7fd5eb402011
+string:	0x7fd5eb402010
+
+code: 0x15  ch: 0x01 | ptr: 0x14 
+info: *ptr +=1; ch=*ptr ;
+------ After ch= (*(ptr++))++ ------
+ch:'A' ptr:bCdE ,string:BbCdE
+ptr:	0x7fd5eb402011
+string:	0x7fd5eb402010
+
+code: 0x18  ch: 0x00 | ptr: 0x18 
+info: ch=*ptr ; *ptr+=1 ;ptr++ ;
+------ After ch= ++*++ptr ------
+ch:'c' ptr:cCdE ,string:AcCdE
+ptr:	0x7fd5eb402011
+string:	0x7fd5eb402010
+
+code: 0x17  ch: 0x03 | ptr: 0x14 
+info: ptr++ ;  ch=*ptr ; *ptr+=1; 
+------ After ch= ++*(++ptr) ------
+ch:'c' ptr:cCdE ,string:AcCdE
+ptr:	0x7fd5eb402011
+string:	0x7fd5eb402010
+
+code: 0x17  ch: 0x03 | ptr: 0x14 
+info: ptr++ ;  ch=*ptr ; *ptr+=1; 
+------ After ch= ++(*++ptr) ------
+ch:'c' ptr:cCdE ,string:AcCdE
+ptr:	0x7fd5eb402011
+string:	0x7fd5eb402010
+
+code: 0x17  ch: 0x03 | ptr: 0x14 
+info: ptr++ ;  ch=*ptr ; *ptr+=1; 
+------ After ch= ++(*(++ptr)) ------
+ch:'c' ptr:cCdE ,string:AcCdE
+ptr:	0x7fd5eb402011
+string:	0x7fd5eb402010
+
+code: 0x17  ch: 0x03 | ptr: 0x14 
+info: ptr++ ;  ch=*ptr ; *ptr+=1; 
+------ After ch= (*(ptr++))++ ------
+ch:'A' ptr:bCdE ,string:BbCdE
+ptr:	0x7fd5eb402011
+string:	0x7fd5eb402010
+
+code: 0x18  ch: 0x00 | ptr: 0x18 
+info: ch=*ptr ; *ptr+=1 ;ptr++ ;
+------ After ch= (*(ptr++))++ ------
+ch:'A' ptr:bCdE ,string:BbCdE
+ptr:	0x7fd5eb402011
+string:	0x7fd5eb402010
+
+code: 0x18  ch: 0x00 | ptr: 0x18 
+info: ch=*ptr ; *ptr+=1 ;ptr++ ;
+------ After ch= (*ptr++)++ ------
+ch:'A' ptr:bCdE ,string:BbCdE
+ptr:	0x7fd5eb402011
+string:	0x7fd5eb402010
+
+code: 0x18  ch: 0x00 | ptr: 0x18 
+info: ch=*ptr ; *ptr+=1 ;ptr++ ;
