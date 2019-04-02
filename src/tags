@@ -1,0 +1,52 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+C_08	include/point.h	16;"	d
+C_08_F	include/point.h	27;"	d
+C_0A	include/point.h	17;"	d
+C_0A_F	include/point.h	31;"	d
+C_15	include/point.h	18;"	d
+C_15_F	include/point.h	28;"	d
+C_17	include/point.h	19;"	d
+C_17_F	include/point.h	29;"	d
+C_18	include/point.h	20;"	d
+C_18_F	include/point.h	30;"	d
+C_1A	include/point.h	21;"	d
+C_1A_F	include/point.h	32;"	d
+C_1C	include/point.h	22;"	d
+C_1C_F	include/point.h	33;"	d
+C_1D	include/point.h	23;"	d
+C_1D_F	include/point.h	34;"	d
+C_FF	include/point.h	24;"	d
+C_FF_F	include/point.h	26;"	d
+Chk_Eval	include/point.h	71;"	d
+POINT_H	include/point.h	9;"	d
+_Eval	include/point.h	39;"	d
+_Eval	include/point.h	41;"	d
+_Eval	include/point.h	43;"	d
+_Eval	include/point.h	45;"	d
+_Eval_	include/point.h	61;"	d
+__CHK0__	start.c	7;"	d	file:
+__CHK2__	chk_point.c	7;"	d	file:
+__CHK2__	main.c	7;"	d	file:
+__Eval_	include/point.h	66;"	d
+_eval	point.c	/^void _eval() {$/;"	f
+_init	include/point.h	52;"	d
+bbit_str	point.c	/^char * bbit_str(int flag,char *str) $/;"	f
+bit_str	point.c	/^char bit_str[]="00000000";$/;"	v
+chk_ch	point.c	/^int chk_ch(const char ch ,const char *str,const char* str1) $/;"	f
+chk_code	point.c	/^int chk_code(char c,const char *p,const char *str, const char *str1)$/;"	f
+chk_ptr	point.c	/^int chk_ptr(const char *p,const char *str,const char *str1) $/;"	f
+info	point.c	/^const char *info[]={$/;"	v
+info_str	point.c	/^const char * info_str(int code)$/;"	f
+init	point.c	/^void init(char *c,char ** p)$/;"	f
+main	chk_point.c	/^int main(int argc, char *argv[])$/;"	f
+main	main.c	/^int main(int argc, char *argv[])$/;"	f
+print_status	point.c	/^void print_status()$/;"	f
+printout	point.c	/^void printout(const char *str,const char ch,const char *ptr) {$/;"	f
+start	start.c	/^void start() $/;"	f
+string	point.c	/^char string[6]="AbCdE";$/;"	v
+string1	point.c	/^const char string1[6]="AbCdE";$/;"	v

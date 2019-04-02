@@ -11,8 +11,8 @@ extern void start();
 
 int main(int argc, char *argv[])
 {
-
-	start();
+	char ch,*ptr; 	
+	_Eval(ch= *ptr++, "");
 	return 0;
 }
 
